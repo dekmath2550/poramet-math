@@ -1,0 +1,49 @@
+:root{--pink:#ff5fb0;--purple:#7b2fd0;--coral:#f06a6a;--teal:#4aa8c0;--yellow:#f7d65a;--line:#b13bff;--soft:#ffd1ec}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100%;background:#14072e;font-family:'K2D','Sarabun',sans-serif;color:#fff;line-height:1.6;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.px{font-family:'Press Start 2P','Courier New',monospace}
+svg{image-rendering:pixelated;display:block}
+
+/* Background */
+.bg{position:fixed;inset:0;background:linear-gradient(180deg,#14072e 0%,#2a0f6b 55%,#4a1fa8 100%);z-index:0}
+.floor{position:fixed;left:0;right:0;bottom:0;height:42%;perspective:340px;overflow:hidden;background:linear-gradient(#2c0f74,#0e0526);z-index:0}
+.grid{position:absolute;left:-60%;right:-60%;top:0;bottom:-40%;background-image:linear-gradient(var(--line) 2px,transparent 2px),linear-gradient(90deg,var(--line) 2px,transparent 2px);background-size:56px 56px;transform:rotateX(66deg);transform-origin:top;animation:mv 1.4s linear infinite}
+@keyframes mv{to{background-position:0 56px}}
+.cloud{position:fixed;width:64px;z-index:0;animation:fl 6s ease-in-out infinite}
+@keyframes fl{50%{transform:translateX(14px)}}
+
+/* Layout */
+main{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:36px 18px 60px}
+.frame{border:2px solid #fff;border-radius:22px;background:rgba(20,7,46,.72);padding:20px 18px;margin-bottom:22px;backdrop-filter:blur(2px)}
+header.frame{text-align:center;padding-top:22px}
+
+/* Ghosts */
+.ghosts{display:flex;gap:14px;justify-content:center;margin-bottom:14px}
+.ghosts div{width:32px;animation:bob 1.2s steps(2) infinite}
+.ghosts div:nth-child(2){animation-delay:.2s}
+.ghosts div:nth-child(3){animation-delay:.4s}
+@keyframes bob{50%{transform:translateY(-6px)}}
+
+/* Text */
+h1{font-size:clamp(1.3rem,6.5vw,2.4rem);margin:.1em 0 .5em;text-shadow:4px 4px 0 var(--purple),0 0 18px #ff7ad9;letter-spacing:1px;word-break:break-word}
+.intro{margin:0 auto;color:var(--soft);max-width:48ch;font-size:1.02rem}
+.lvl{display:inline-block;font-size:.58rem;background:var(--yellow);color:#2a0f6b;padding:6px 8px;border-radius:6px;margin-bottom:10px}
+.label{font-size:clamp(.9rem,4vw,1.25rem);color:#fff;margin:2px 0 8px;text-shadow:3px 3px 0 var(--purple);line-height:1.5}
+.desc{margin:0 0 14px;color:var(--soft)}
+.tag{font-weight:800;color:var(--yellow);font-size:.95rem}
+
+/* Material list */
+ul{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:12px}
+a.btn,.empty{display:inline-block;border-radius:999px;padding:9px 22px;font-weight:800;font-size:1rem;text-decoration:none;box-shadow:0 5px 0 rgba(0,0,0,.35)}
+a.btn{background:var(--coral);color:#fff;transition:transform .12s}
+a.btn:hover,a.btn:focus-visible{transform:translateY(-2px)}
+a.btn:active{transform:translateY(3px);box-shadow:0 2px 0 rgba(0,0,0,.35)}
+.empty{background:rgba(255,255,255,.12);color:#c9b8e8;font-weight:500;border:2px dashed #7a5fb5;box-shadow:none}
+
+/* Footer */
+footer.frame{text-align:center;color:var(--soft);font-size:.95rem}
+footer p{margin:3px 0}
+footer .name{color:#fff;font-weight:800;font-size:1.05rem}
+.deco{display:flex;gap:8px;justify-content:center;margin-bottom:12px}
+.deco div{width:22px}
